@@ -120,4 +120,35 @@ class CircularQueue implements Queue{
 }
 
 public class CircularQueueDemo {
+    public static void main(String[] args){
+        CircularQueue circularQueue = new CircularQueue(5);
+        circularQueue.enqueue(100);
+        System.out.println("元素100入队列。");
+        circularQueue.enqueue(200);
+        System.out.println("元素200入队列。");
+        circularQueue.enqueue(300);
+        System.out.println("元素300入队列。");
+        circularQueue.enqueue(400);
+        System.out.println("元素400入队列。");
+        circularQueue.enqueue(500);
+        System.out.println("元素500入队列。");
+        System.out.println();
+
+        if(circularQueue.isEmpty()){
+            System.out.println("队列当前为空。");
+        }
+        else {
+            System.out.println("队列当前不为空。");
+        }
+        System.out.println("队列内有" + circularQueue.getSize() + "个元素。");
+        System.out.println("对首元素为：" + circularQueue.getFront());
+
+        circularQueue.dequeue();
+        System.out.println("一个元素出队列后，新队首元素为：" + circularQueue.getFront());
+
+        circularQueue.setEmpty();
+        if(circularQueue.isEmpty()){
+            System.out.println("置队列为空操作后，队列内为空。");
+        }
+    }
 }
